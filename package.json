@@ -1,0 +1,9 @@
+{
+  "name": "tests-intro",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc"
+  },
+  "private": true
+}
