@@ -6,7 +6,7 @@ import { IUserRepository } from '../../domain/repository/IUserRepository';
 import { JsonUserRepository } from './JsonUserRepository';
 
 export class JsonRepositories implements IRepositories {
-    private static readonly saveFolder = 'data';
+    public static readonly saveFolder = 'data';
 
     private readonly _userRepository: IUserRepository = new JsonUserRepository(JsonRepositories.saveFolder);
 

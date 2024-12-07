@@ -17,8 +17,11 @@ export class JsonRepository<T> {
         try {
             const json = await fs.readFile(this.filePath, 'utf-8');
             return JSON.parse(json);
-        } catch (error) {
-            console.error(error);
+        } catch (error: any) {
+            if (error.code !== 'ENOENT') {
+                console.error(error);
+            }
+
             return [];
         }
     }
