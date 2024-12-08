@@ -1,4 +1,8 @@
 {
+  "compilerOptions": {
+    "types": ["@types/jest", "jest-playwright-preset", "expect-playwright"],
+    "esModuleInterop": true
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json"},

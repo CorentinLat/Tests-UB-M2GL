@@ -11,9 +11,9 @@
                 <input class="input" id="password" type="password" v-model="form.password" :disabled="loading" required>
             </article>
 
-            <p class="error" v-if="error">{{ error }}</p>
+            <p data-testid="error" class="error" v-if="error">{{ error }}</p>
 
-            <button :disabled="loading || !isFormValid">Se connecter</button>
+            <button data-testid="submit" :disabled="loading || !isFormValid">Se connecter</button>
         </form>
 
         <router-link :to="{ name: 'Register' }">Créer un compte</router-link>
