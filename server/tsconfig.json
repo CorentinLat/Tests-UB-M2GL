@@ -8,5 +8,7 @@
     "skipLibCheck": true,
     "typeRoots": ["types", "node_modules/@types"],
     "types": ["jest", "node"]
-  }
+  },
+  "include": ["src/**/*.ts", "types/**/*.d.ts"],
+  "files": ["types/express/index.d.ts"],
 }

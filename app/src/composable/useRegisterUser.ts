@@ -12,17 +12,16 @@ export const useRegisterUser = () => {
     const registerUser = async (user: CreateUser) => {
         loading.value = true;
 
-        try {
-            await fetch('http://localhost:3000/open/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(user),
-            });
+        const response = await fetch('http://localhost:3000/open/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user),
+        });
 
+        if (response.ok) {
             await router.push({ name: 'Login' });
-        } catch (err: any) {
+        } else {
             error.value = 'Erreur lors de la création';
-        } finally {
             loading.value = false;
         }
     };
