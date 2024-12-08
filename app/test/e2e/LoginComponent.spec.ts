@@ -23,7 +23,7 @@ describe('LoginComponent', () => {
         await page.waitForTimeout(2000);
 
         const state = await context.storageState();
-        expect(page.url().endsWith('/')).toBeTruthy();
+        expect(page.url()).toBe('http://localhost:5173/');
         expect(state.origins[0].localStorage).toEqual([{ name: 'token', value: 'token' }]);
 
         await context.close();
